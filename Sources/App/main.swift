@@ -17,7 +17,7 @@ drop.get("create") { request in
     
     if let json = request.json {
     
-        var user = User(json: json)
+        var user = try User(json: json)
         try user.save()
     }
 
