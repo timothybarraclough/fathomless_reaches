@@ -4,7 +4,7 @@ Proof of concept: A single code base for Server-side / Client-side swift with da
 
 ## 📖 Web app
 
-[Heroku hosted web app](fathomless-reaches-54516.heroku.com)
+[Heroku hosted web app](https://fathomless-reaches-54516.herokuapp.com/)
 
 ## 💧 Community
 
