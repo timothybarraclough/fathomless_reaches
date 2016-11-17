@@ -13,10 +13,10 @@ import Foundation
 
 final class User : Model {
 
-    let name : String
-    let dateOfBirth : String
-    let age : Int
-    let petsNames : [String]?
+    var name : String
+    var dateOfBirth : String
+    var age : Int
+    var petsNames : [String]?
     
     // extension Entity {
         var exists = false
@@ -37,6 +37,13 @@ final class User : Model {
         self.dateOfBirth = String(describing: dateOfBirth)
         self.age = dateOfBirth.yearsSinceDate()
         self.petsNames = petsNames
+    }
+    
+    func updateFromUser(_ user: User) {
+        self.name = user.name
+        self.dateOfBirth = user.dateOfBirth
+        self.age = user.age
+        self.petsNames = user.petsNames
     }
     
     
