@@ -1,10 +1,10 @@
-# Basic Template
+# Vapor Demo
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+Proof of concept: A single code base for Server-side / Client-side swift with data stores on each side
 
-## 📖 Documentation
+## 📖 Web app
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+[Heroku hosted web app](fathomless-reaches-54516.heroku.com)
 
 ## 💧 Community
 
