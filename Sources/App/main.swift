@@ -13,10 +13,13 @@ drop.get { req in
     ])
 }
 
-drop.get("add") { request in
+drop.get("create") { request in
     
-    var user = User(name: "Gareth", dateOfBirth: Date(timeIntervalSince1970: 0))
-    try user.save()
+    if let json = request.json {
+    
+        var user = User(json: json)
+        try user.save()
+    }
 
     return try JSON(node: User.all().makeNode())
 }
