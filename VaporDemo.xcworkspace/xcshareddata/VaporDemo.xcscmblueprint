@@ -9,8 +9,8 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "49E2E08D-0FF8-457D-A5C8-C5BA1FCEDF78",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : "Fathomless_Reaches\/Packages\/Jay-1.0.0\/",
-    "F74A4B637F41567827DAB250E1A429326DAA3203" : "Fathomless_Reaches\/"
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : "VaporDemo\/Packages\/Jay-1.0.0\/",
+    "F74A4B637F41567827DAB250E1A429326DAA3203" : "VaporDemo\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "VaporDemo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

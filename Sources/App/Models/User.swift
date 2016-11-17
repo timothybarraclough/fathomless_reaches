@@ -30,6 +30,23 @@ final class User : Model {
         petsNames = try node.extract("pets_names")
         age = try node.extract("age")
     }
+    
+    init(name: String, dateOfBirth: Date, petsNames : [String]? = nil) {
+        self.id = nil
+        self.name = name
+        self.dateOfBirth = String(describing: dateOfBirth)
+        self.age = dateOfBirth.yearsSinceDate()
+        self.petsNames = petsNames
+    }
+    
+    
+}
+
+extension Date {
+    func yearsSinceDate() -> Int {
+        let difference = Calendar.current.dateComponents([.year], from: self, to: Date())
+        return difference.year ?? 0
+    }
 }
 
 extension User : NodeRepresentable {
@@ -40,7 +57,8 @@ extension User : NodeRepresentable {
             "id" : id,
             "name" : name,
             "date_of_birth" : dateOfBirth,
-            "pets_names" : petsNames?.makeNode()
+            "pets_names" : petsNames?.makeNode(),
+            "age" : age
             ])
     }
 }
