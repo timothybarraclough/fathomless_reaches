@@ -21,16 +21,29 @@ class Vapor_Demo_AppTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testLocationEndpointReturnsLocation() {
+        
+        var location : Location?
+        let asyncExpectation = expectation(description: "Server returned one item for API Endpoint")
+        do {
+        try Location.requestSingleLocation(1) {
+            location = $0
+            asyncExpectation.fulfill()
+            
+        }
+        } catch {
+            XCTFail()
+        }
+        waitForExpectations(timeout: 5) { _ in
+            if let _ = location {
+                XCTAssertNotNil(location)
+            } else {
+                XCTFail()
+            }
+            
+        }
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
