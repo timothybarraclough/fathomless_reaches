@@ -8,6 +8,8 @@ osx_image: xcode8.1
 before_install:
 
 script:
+- set -o pipefail && xcodebuild test -workspace VaporDemo.xcworkspace -list | xcpretty
+
 - set -o pipefail && xcodebuild test -workspace VaporDemo.xcworkspace -scheme 'Vapor Demo App' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.1' | xcpretty
 
 after_success:
