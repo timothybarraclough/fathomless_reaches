@@ -10,16 +10,18 @@ import UIKit
 import Alamofire
 import Vapor
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     var myLocations : [Location]?
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
             try Location.requestAllLocations {
+                
                 locations in
                 
                 self.myLocations = locations
+                self.tableView.reloadData()
                 print(self.myLocations ?? "No locations found")
             }
             
@@ -30,6 +32,23 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let location = myLocations?[indexPath.row]
+        cell.textLabel?.text = "Longitude : \(location?.longitude)"
+        cell.detailTextLabel?.text = "Latitude : \(location?.longitude)"
+        
+        return cell
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myLocations?.count ?? 0
     }
 
 

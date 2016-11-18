@@ -59,14 +59,3 @@ extension Location {
                                 speed: json["speed"].floatValue)
     }
 }
-
-//extension Data {
-//    
-//    func jayParsed() throws -> [Location] {
-//        let v = [UInt8](self)
-//        let json = try Jay().jsonFromData(v)
-//        guard case .array(let array) = json else { return []}
-//        return try Location.fromJSONArray(array)
-//        
-//    }
-//}
